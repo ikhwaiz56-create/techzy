@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechZy Dashboard Upload</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- HEADER -->
+    <header class="bg-white sticky top-0 shadow z-50">
+
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="text-cyan-700 text-xl font-extrabold md:text-3xl"><a href="index.html">TechZy</a></h1>
+            
+            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl">
+                    Logout <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="flex gap-5">
+        <!-- SIDEBAR -->
+        <aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg hidden md:flex flex-col p-6 z-40">
+
+            <h2 class="text-xl font-bold text-cyan-600 mb-8 mt-16">
+                Dashboard Menu
+            </h2>
+
+            <nav class="flex flex-col gap-5 text-lg font-medium">
+
+                <a href="#" class="flex items-center gap-3 text-cyan-600">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i> Overview
+                </a>
+
+                <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+                    <i class="fa-solid fa-box-archive"></i> My Products
+                </a>
+
+                <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+                    <i class="fa-solid fa-plus"></i> Upload Product
+                </a>
+
+                <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+                    <i class="fa-solid fa-cart-arrow-down"></i> Orders
+                </a>
+
+                <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+                    <i class="fa-solid fa-users"></i> Customers
+                </a>
+
+                <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+                    <i class="fa-solid fa-gears"></i> Settings
+                </a>
+
+            </nav>
+
+            <div class="mt-auto">
+                <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-xl font-semibold">
+                    Go to Store
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN SECTION -->
+        <main class="flex-1 ml-64 p-6 md:p-12">
+            <!-- dashboard -->
+             <div id="overview" class="hidden">
+
+                <h2 class="text-3xl font-bold mb-8">Overview</h2>
+
+                <!-- STATS CARDS -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+                    <div class="bg-white p-6 rounded-2xl shadow">
+                        <h3 class="text-gray-500">Total Products</h3>
+                        <p class="text-3xl font-bold text-cyan-600 mt-2">24</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow">
+                        <h3 class="text-gray-500">Total Orders</h3>
+                        <p class="text-3xl font-bold text-green-600 mt-2">112</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow">
+                        <h3 class="text-gray-500">Pending Orders</h3>
+                        <p class="text-3xl font-bold text-yellow-500 mt-2">7</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow">
+                        <h3 class="text-gray-500">Total Revenue</h3>
+                        <p class="text-3xl font-bold text-purple-600 mt-2">₹4,50,000</p>
+                    </div>
+
+                </div>
+
+                <!-- RECENT ORDERS TABLE -->
+                <div class="bg-white rounded-2xl shadow p-6">
+                    <h3 class="text-xl font-bold mb-4">Recent Orders</h3>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-100">
+                                <tr>
+                                    <th class="p-3">Order ID</th>
+                                    <th class="p-3">Customer</th>
+                                    <th class="p-3">Product</th>
+                                    <th class="p-3">Amount</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-3">#TP1021</td>
+                                    <td class="p-3">Chaoba</td>
+                                    <td class="p-3">iPhone 15</td>
+                                    <td class="p-3">₹80,000</td>
+                                    <td class="p-3 text-green-600 font-semibold">Delivered</td>
+                                </tr>
+
+                                <tr class="border-b">
+                                    <td class="p-3">#TP1022</td>
+                                    <td class="p-3">Tomba</td>
+                                    <td class="p-3">Gaming Laptop</td>
+                                    <td class="p-3">₹95,000</td>
+                                    <td class="p-3 text-yellow-500 font-semibold">Pending</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-3">#TP1023</td>
+                                    <td class="p-3">Nanao</td>
+                                    <td class="p-3">Drone Camera</td>
+                                    <td class="p-3">₹45,000</td>
+                                    <td class="p-3 text-blue-600 font-semibold">Shipped</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MY PRODUCTS SECTION -->
+            <div id="myProducts" class="hidden grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+                <!-- PRODUCT CARD 1 -->
+                <div class="bg-white rounded-3xl shadow hover:shadow-lg transition p-4 h-fit">
+
+                    <div class="h-40 bg-gray-200 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="https://via.placeholder.com/300x200"
+                            class="w-full h-full object-cover">
+                    </div>
+
+                    <h3 class="font-bold text-lg">iPhone 15 Pro</h3>
+                    <p class="text-sm text-gray-500 mb-1">Mobiles & Tablets</p>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-cyan-600 font-bold text-lg">
+                            ₹1,20,000</span>
+                        <span class="text-sm text-gray-400 line-through">
+                            ₹1,30,000</span>
+                    </div>
+
+                    <p class="text-sm mb-3">
+                        Stock: <span class="font-semibold">12</span>
+                    </p>
+
+                    <div class="flex gap-2">
+                        <button class="w-1/2 bg-yellow-400 hover:bg-yellow-500 
+                            text-white py-2 rounded-xl text-sm">
+                            Edit
+                        </button>
+
+                        <button class="w-1/2 bg-red-500 hover:bg-red-600 
+                            text-white py-2 rounded-xl text-sm">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- UPLOAD SECTION -->
+            <div id="uploadProduct" class="hidden max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-10">
+
+                <h2 class="text-3xl font-bold mb-8">Add New Product</h2>
+
+                <form class="grid gap-5">
+
+                    <div class="flex gap-6">
+
+                        <label class="flex flex-col gap-2 w-full">
+                                &emsp;Product Name
+                            <input type="text" placeholder="Product Name"
+                                class="border border-black rounded-xl px-4 py-3">
+                        </label>
+
+                        <label class="flex flex-col gap-2 w-full">
+                                &emsp;Brand
+                            <input type="text" placeholder="Brand"
+                                class="border border-black rounded-xl px-4 py-3">
+                        </label>
+                            
+                    </div>
+                        
+
+                    <!-- PRICE & STOCK-->
+                    <div class="grid md:grid-cols-3 gap-6">
+                            <label class="flex flex-col gap-2">
+                                &emsp;Price ₹
+                            <input type="number" placeholder="Price ₹" class="border border-black rounded-xl px-4 py-3"></label>
+                            
+                            <label class="flex flex-col gap-2">
+                                &emsp;Discount %
+                            <input type="number" placeholder="Discount %" class="border border-black rounded-xl px-4 py-3"></label>
+
+                            <label class="flex flex-col gap-2">
+                                &emsp;Stock
+                            <input type="number" placeholder="Stock" class="border border-black rounded-xl px-4 py-3"></label>
+
+                    </div>
+
+
+                        <!-- DESCRIPTION -->
+                    <div class="flex justify-between gap-6">
+                        <div class="w-2/3 flex flex-col gap-5">
+                            <label class="flex flex-col gap-2">
+                                &emsp;Category
+                                <select class="border border-black rounded-xl px-4 py-3">
+                                    <option>Select Category</option>
+                                    <option>Mobiles & Tablet</option>
+                                    <option>Computers & Laptops</option>
+                                    <option>Drones</option>
+                                    <option>Appliances</option>
+                                    <option>Home Entertainment</option>
+                                    <option>EVs & Batteries</option>
+                                </select>
+                            </label>
+                                
+                            <label class="flex flex-col gap-2">
+                                &emsp;Product Description
+                                <textarea rows="8" placeholder="Write product description..."
+                                    class="w-full border border-black rounded-xl px-4 py-3"></textarea>
+                            </lable>
+
+                        </div>
+                        <!-- DRAG IMAGE BOX -->
+                        <label class="border-2 border-black border-dashed rounded-2xl h-full w-1/3 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50">
+
+                            <i class="fa-solid fa-image text-5xl text-gray-400 mb-3"></i>
+                            <p class="text-gray-500">Drop image here or click</p>
+
+                            <input type="file" id="img2" class="hidden">
+                        </label>
+
+                    </div>
+
+                        <!-- BUTTON -->
+                        <button class="bg-cyan-500 hover:bg-cyan-600 text-white py-4 rounded-2xl font-bold text-lg mt-4">Save Product</button>
+
+                </form>
+
+            </div>
+            
+            <!-- ORDER STATUS -->
+            <div id="orders" class="m-auto max-w-3xl">
+
+                <h2 class="text-3xl font-bold mb-8 text-gray-800">
+                    Orders Management
+                </h2>
+
+                
+
+                <!-- ORDER CARD -->
+                <div id="orderCard" class="grid gap-10">
+                    <div class="bg-white flex-1 rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+                        
+                        <div class="flex justify-center mb-5">
+                            <h3 class="text-lg font-bold">Order #ORD-1024</h3>
+                        </div>
+                        
+                        <div class="flex justify-around mb-5">
+                            <p class="text-gray-500 text-sm">Placed on 02 March 2026</p>
+                            
+                            <span class="px-4 py-1 text-sm font-semibold rounded-full bg-green-100 text-green-600">
+                                Delivered
+                            </span>
+                        </div>
+                                
+                                
+
+                        <div class="flex items-center gap-5 mb-10">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Spying_quadcopter_%28cropped%29.jpg/500px-Spying_quadcopter_%28cropped%29.jpg"
+                                class="w-20 h-20 rounded-xl object-cover">
+                            
+                            <div class="flex flex-col gap-2">
+                                <h4 class="font-semibold">Drone</h4>
+                                <p class="text-gray-500 text-sm">Customer: Chaoba</p>
+                                <p class="text-gray-500 text-sm">Quantity: 1</p>
+                            </div>
+
+                            <div class="ml-auto text-right">
+                                <p class="text-xl font-bold text-cyan-600">₹2,499</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center gap-10">
+                            <button class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl">
+                                View Details
+                            </button>
+
+                            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl">
+                                Invoice
+                            </button>
+                        </div>
+                    </div>
+
+                            
+
+                </div>
+             </div>
+        </main>
+    </div>
+    
+
+
+
+
+    <script>
+        
+        const uploadedProducts = [1, 2, 3, 4, 5, 6, 7, 8];
+        const orderCard = document.getElementById("orderCard");
+        const myProducts = document.getElementById("myProducts");
+            for(let i = 0; i < uploadedProducts.length; i++){
+        myProducts.innerHTML += `<div class="bg-white rounded-3xl shadow hover:shadow-lg transition p-4 h-fit">
+
+                    <div class="h-40 bg-gray-200 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
+                        <img src="https://via.placeholder.com/300x200"
+                            class="w-full h-full object-cover">
+                    </div>
+
+                    <h3 class="font-bold text-lg">iPhone 15 Pro</h3>
+                    <p class="text-sm text-gray-500 mb-1">Mobiles & Tablets</p>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-cyan-600 font-bold text-lg">
+                            ₹1,20,000</span>
+                        <span class="text-sm text-gray-400 line-through">
+                            ₹1,30,000</span>
+                    </div>
+
+                    <p class="text-sm mb-3">
+                        Stock: <span class="font-semibold">12</span>
+                    </p>
+
+                    <div class="flex gap-2">
+                        <button class="w-1/2 bg-yellow-400 hover:bg-yellow-500 
+                            text-white py-2 rounded-xl text-sm">
+                            Edit
+                        </button>
+
+                        <button class="w-1/2 bg-red-500 hover:bg-red-600 
+                            text-white py-2 rounded-xl text-sm">
+                            Delete
+                        </button>
+                    </div>
+                </div>`;
+            
+            
+            orderCard.innerHTML +=`<div class="bg-white flex-1 rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300">
+                        
+                        <div class="flex justify-center mb-5">
+                            <h3 class="text-lg font-bold">Order #ORD-1024</h3>
+                        </div>
+                        
+                        <div class="flex justify-around mb-5">
+                            <p class="text-gray-500 text-sm">Placed on 02 March 2026</p>
+                            
+                            <span class="px-4 py-1 text-sm font-semibold rounded-full bg-green-100 text-green-600">
+                                Delivered
+                            </span>
+                        </div>
+                                
+                                
+
+                        <div class="flex items-center gap-5 mb-10">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Spying_quadcopter_%28cropped%29.jpg/500px-Spying_quadcopter_%28cropped%29.jpg"
+                                class="w-20 h-20 rounded-xl object-cover">
+                            
+                            <div class="flex flex-col gap-2">
+                                <h4 class="font-semibold">Drone</h4>
+                                <p class="text-gray-500 text-sm">Customer: Chaoba</p>
+                                <p class="text-gray-500 text-sm">Quantity: 1</p>
+                            </div>
+
+                            <div class="ml-auto text-right">
+                                <p class="text-xl font-bold text-cyan-600">₹2,499</p>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center gap-10">
+                            <button class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl">
+                                View Details
+                            </button>
+
+                            <button class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl">
+                                Invoice
+                            </button>
+                        </div>
+                    </div>`;
+                }
+
+        
+
+    </script>
+
+</body>
+</html>

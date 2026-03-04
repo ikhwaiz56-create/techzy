@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechZy Register</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body class="bg-gradient-to-br from-cyan-100 to-gray-200">
+
+    <header class="bg-white sticky top-0 px-5 z-50">
+
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-cyan-700 text-xl font-extrabold md:text-3xl"><a href="index.html">TechZy</a></h1>
+    <div class="hidden md:flex gap-5 text-xl font-semibold">
+      <a href="">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Collections</a>
+      <a href="#">Deals</a>
+    </div>
+
+    <div class="flex items-center justify-center w-1/4 relative hidden lg:block">
+      <input class="border rounded-2xl border-cyan-700 px-5 py-2 w-full" placeholder="Search for products...">
+      <i class="fa-solid fa-magnifying-glass text-xl absolute right-4 top-2.5 cursor-pointer"></i>
+    </div>
+    
+    <div class="hidden md:block lg:hidden"><i class="fa-solid fa-magnifying-glass"></i></div>
+    
+    
+    <div class="flex gap-4">
+      <a href="product.html"><button class="bg-white px-5 py-2 rounded-2xl text-xl font-semibold cursor-pointer sm:block"> <i class="fa-solid fa-cart-arrow-down"></i> Cart (0)</button></a>
+      <a href="login.html"><button class="bg-cyan-500 text-white py-2 px-3 rounded-xl md:text-lg sm:text-md text-sm cursor-pointer">Login</button></a>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <aside class="md:hidden relative">
+        <button onclick="asideOnOff()"><i class="fa-solid fa-bars cursor-pointer text-2xl"></i></button>
+
+      <!-- MOBILE DROPDOWN -->
+      <div id="asideMenu" class="hidden absolute right-0 mt-4 w-60 bg-white rounded-2xl shadow-xl p-5 flex flex-col gap-4 text-lg font-semibold cursor-pointer">
+        
+        <button class="bg-white px-5 py-2 rounded-2xl text-xl font-semibold cursor-pointer sm:hidden"> <i class="fa-solid fa-cart-arrow-down"></i> Cart (0)</button>
+        <a href="">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Collections</a>
+        <a href="#">Deals</a>
+
+        <input class="border rounded-2xl border-cyan-500 px-4 py-2 w-full mt-2"
+               placeholder="Search for products...">
+
+      </div>
+    </aside>
+  </div>
+    </header>
+
+
+    <section class="min-h-screen flex items-center justify-center py-5">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-10">
+
+            <h2 class="text-xl font-bold text-center mb-8">Create Your Account</h2>
+
+            <form class="space-y-6">
+
+            <!-- FULL NAME -->
+                <div>
+                    <label class="font-semibold">Full Name</label>
+                    <input type="text" placeholder="Enter your full name" class="w-full mt-2 border rounded-xl px-5 py-3 focus:outline-cyan-500">
+                </div>
+
+            <!-- EMAIL -->
+                <div>
+                    <label class="font-semibold">Email Address</label>
+                    <input type="email" placeholder="Enter your email" class="w-full mt-2 border rounded-xl px-5 py-3 focus:outline-cyan-500">
+                </div>
+
+            <!-- PHONE -->
+                <div>
+                    <label class="font-semibold">Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" class="w-full mt-2 border rounded-xl px-5 py-3 focus:outline-cyan-500">
+                </div>
+
+            <!-- PASSWORD -->
+                <div>
+                    <label class="font-semibold">Password</label>
+                    <div class="relative mt-2">
+                        <input id="passwordInput" type="text" placeholder="Create password" class="w-full border rounded-xl px-5 py-3 pr-12 focus:outline-cyan-500">
+
+                        <button onclick="passwordVisible()" type="button" class="absolute right-4 top-3 text-gray-500"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+
+            <!-- CONFIRM PASSWORD -->
+                <div>
+                    <label class="font-semibold">Confirm Password</label>
+                    <div class="relative mt-2">
+                        <input id="passwordInput" type="text" placeholder="Confirm password" class="w-full border rounded-xl px-5 py-3 pr-12 focus:outline-cyan-500">
+
+                        <button onclick="passwordVisible()" type="button" class="absolute right-4 top-3 text-gray-500"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+
+            <!-- TERMS & CONDITIONS CHECK -->
+                <div class="flex items-center gap-2 text-sm">
+                    <input type="checkbox">
+                    <label>I agree to the<a href="#" class="text-cyan-600 font-semibold">Terms & Conditions</a></label>
+                </div>
+
+            <!-- REGISTER BUTTON -->
+                <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-4 rounded-2xl font-bold text-lg">Create Account</button>
+
+            </form>
+            <!-- DIVIDER -->
+                <div class="flex items-center gap-4 my-6">
+                    <hr class="flex-1">
+                    <span class="text-gray-400 text-sm">OR</span>
+                    <hr class="flex-1">
+                </div>
+
+            <!-- SOCIAL SIGNUP -->
+                <div class="flex gap-4">
+
+                    <button class="flex-1 border py-3 rounded-xl font-semibold hover:bg-gray-50"><i class="fa-brands fa-google mr-2"></i>Google</button>
+
+                    <button class="flex-1 border py-3 rounded-xl font-semibold hover:bg-gray-50"><i class="fa-brands fa-facebook text-blue-600 mr-2"></i>Facebook</button>
+
+                </div>
+
+            <!-- LOGIN LINK -->
+                <p class="text-center text-sm mt-8">Already have an account?<a href="login.html" class="text-cyan-600 font-semibold">Login</a></p>
+
+            </div>
+        </section>
+
+
+    <script>
+        function passwordVisible(){
+            const passwordInput = document.getElementById('passwordInput');
+            if(passwordInput.type=="text"){
+                passwordInput.type="password";
+            }
+            else{
+                passwordInput.type="text";
+            }
+        }
+        passwordVisible();
+    </script>
+
+</body>
+</html>

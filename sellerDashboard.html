@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechZy Seller Dashboard</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER -->
+<header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-cyan-600">TechZy Seller</h1>
+
+        <div class="flex items-center gap-4">
+            <button class="hidden md:block bg-gray-200 px-4 py-2 rounded-xl">
+                Welcome, Seller
+            </button>
+            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl">
+                Logout <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="flex min-h-screen">
+
+<!-- SIDEBAR -->
+<!-- SIDEBAR (FIXED) -->
+<aside class="fixed top-0 left-0 h-screen w-64 bg-white shadow-lg hidden md:flex flex-col p-6 z-40">
+
+    <h2 class="text-xl font-bold text-cyan-600 mb-8 mt-16">
+        Dashboard Menu
+    </h2>
+
+    <nav class="flex flex-col gap-5 text-lg font-medium">
+
+        <a href="#" class="flex items-center gap-3 text-cyan-600">
+            <i class="fa-solid fa-chart-line"></i> Overview
+        </a>
+
+        <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+            <i class="fa-solid fa-box"></i> My Products
+        </a>
+
+        <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+            <i class="fa-solid fa-plus"></i> Upload Product
+        </a>
+
+        <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+            <i class="fa-solid fa-cart-shopping"></i> Orders
+        </a>
+
+        <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+            <i class="fa-solid fa-users"></i> Customers
+        </a>
+
+        <a href="#" class="flex items-center gap-3 hover:text-cyan-600">
+            <i class="fa-solid fa-gear"></i> Settings
+        </a>
+
+    </nav>
+
+    <div class="mt-auto">
+        <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-white py-3 rounded-xl font-semibold">
+            Go to Store
+        </button>
+    </div>
+
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="flex-1 p-6 md:p-12">
+
+<h2 class="text-3xl font-bold mb-8">Seller Dashboard Overview</h2>
+
+<!-- STATS CARDS -->
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+<div class="bg-white p-6 rounded-2xl shadow">
+    <h3 class="text-gray-500">Total Products</h3>
+    <p class="text-3xl font-bold text-cyan-600 mt-2">24</p>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow">
+    <h3 class="text-gray-500">Total Orders</h3>
+    <p class="text-3xl font-bold text-green-600 mt-2">112</p>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow">
+    <h3 class="text-gray-500">Pending Orders</h3>
+    <p class="text-3xl font-bold text-yellow-500 mt-2">7</p>
+</div>
+
+<div class="bg-white p-6 rounded-2xl shadow">
+    <h3 class="text-gray-500">Total Revenue</h3>
+    <p class="text-3xl font-bold text-purple-600 mt-2">₹4,50,000</p>
+</div>
+
+</div>
+
+<!-- RECENT ORDERS TABLE -->
+<div class="bg-white rounded-2xl shadow p-6">
+    <h3 class="text-xl font-bold mb-4">Recent Orders</h3>
+
+    <div class="overflow-x-auto">
+        <table class="w-full text-left">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th class="p-3">Order ID</th>
+                    <th class="p-3">Customer</th>
+                    <th class="p-3">Product</th>
+                    <th class="p-3">Amount</th>
+                    <th class="p-3">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b">
+                    <td class="p-3">#TX1021</td>
+                    <td class="p-3">Rahul Sharma</td>
+                    <td class="p-3">iPhone 15</td>
+                    <td class="p-3">₹80,000</td>
+                    <td class="p-3 text-green-600 font-semibold">Delivered</td>
+                </tr>
+
+                <tr class="border-b">
+                    <td class="p-3">#TX1022</td>
+                    <td class="p-3">Anita Singh</td>
+                    <td class="p-3">Gaming Laptop</td>
+                    <td class="p-3">₹95,000</td>
+                    <td class="p-3 text-yellow-500 font-semibold">Pending</td>
+                </tr>
+
+                <tr>
+                    <td class="p-3">#TX1023</td>
+                    <td class="p-3">Vikram Patel</td>
+                    <td class="p-3">Drone Camera</td>
+                    <td class="p-3">₹45,000</td>
+                    <td class="p-3 text-blue-600 font-semibold">Shipped</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</main>
+</div>
+
+</body>
+</html>
